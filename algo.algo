@@ -1,0 +1,42 @@
+Début
+    // Initialiser les compteurs
+    longueur = 0
+    nombreDeMots = 0
+    nombreDeVoyelles = 0
+    phrase = ""
+
+    // Lire les caractères jusqu'à un point
+    Tant que vrai faire
+        lire caractere
+        Si caractere = "." alors
+            sortir de la boucle
+        Fin Si
+
+        // Ajouter le caractère à la phrase
+        phrase = phrase + caractere
+        longueur = longueur + 1 // Incrémenter la longueur
+
+        // Vérifier si le caractère est une voyelle
+        Si caractere est "a" ou "e" ou "i" ou "o" ou "u" ou "A" ou "E" ou "I" ou "O" ou "U" alors
+            nombreDeVoyelles = nombreDeVoyelles + 1
+        Fin Si
+
+        // Vérifier si le caractère est un espace
+        Si caractere = " " alors
+            // Vérifier qu'il y a un mot avant l'espace
+            Si phrase n'est pas vide alors
+                nombreDeMots = nombreDeMots + 1
+            Fin Si
+        Fin Si
+    Fin Tant que
+
+    // Vérifier le dernier mot
+    Si phrase n'est pas vide alors
+        nombreDeMots = nombreDeMots + 1
+    Fin Si
+
+    // Afficher les résultats
+    Afficher "Longueur de la phrase : " + longueur
+    Afficher "Nombre de mots : " + nombreDeMots
+    Afficher "Nombre de voyelles : " + nombreDeVoyelles
+Fin
